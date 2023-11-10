@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include octavision *.css
+recursive-include octavision *.csv
+recursive-include octavision *.html
+recursive-include octavision *.ico
+recursive-include octavision *.js
+recursive-include octavision *.json
+recursive-include octavision *.md
+recursive-include octavision *.png
+recursive-include octavision *.py
+recursive-include octavision *.svg
+recursive-include octavision *.txt
+recursive-exclude octavision *.pyc
