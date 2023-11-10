@@ -35,6 +35,7 @@ app_license = "MIT"
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
 # Home Pages
+Home_page ="index"
 # ----------
 
 # application home page (will override Website Settings)
