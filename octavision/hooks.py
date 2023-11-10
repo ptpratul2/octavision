@@ -1,5 +1,5 @@
 from . import __version__ as app_version
-
+from octavision.route import routes
 app_name = "octavision"
 app_title = "OctaVision"
 app_publisher = "Pratul"
@@ -48,6 +48,9 @@ Home_page ="index"
 
 # Generators
 # ----------
+
+#service page route
+website_route_rules = routes
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]

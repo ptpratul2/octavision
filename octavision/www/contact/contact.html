@@ -1,0 +1,63 @@
+
+{% extends 'templates/octabase.html' %}
+{% block title %}Contact{% endblock %}
+{% block content%}
+
+    <div class="inside-container">
+        <div class="inside-content">
+            <div class="container">
+                <div style="text-align:center">
+                    <h2>Contact Us</h2>
+                    <p>Swing by for a cup of coffee, or leave us a message:</p>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <form action="#">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name..">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Your Email Address..">
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" name="phone" placeholder="Your Phone Number..">
+                            <label for="service">Service</label>
+                            <select id="service" name="country">
+                                <option value="erp">ERP</option>
+                                <option value="crm">CRM</option>
+                                <option value="website">Website</option>
+                            </select>
+                            <label for="subject">Subject</label>
+                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                            <input id="submit" type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    
+
+
+{% endblock %}
+
+{% block script %}
+ <!-- #Custom page Js -->
+ <script src="/assets/vidhi/www/js/contact.js" async></script>
+
+ 
+
+    <script type="text/javascript" src="/assets/frappe/dist/js/libs.bundle.6XLVBACU.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/desk.bundle.5PBJ6IGO.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/list.bundle.4XBGPU4K.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/form.bundle.N5N5BWSJ.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/controls.bundle.6LUAIUD7.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/report.bundle.S2AD7H4D.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/telemetry.bundle.D5NSGVQ2.js"></script>
+	
+
+    {% endblock %}
