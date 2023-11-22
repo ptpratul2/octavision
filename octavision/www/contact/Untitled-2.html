@@ -1,11 +1,13 @@
 
+
 {% extends 'templates/octabase.html' %}
 
 {% block title %}Get in Touch{% endblock %} 
 
 {% block content %}
-<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text">
- <div class="container inner text-center">
+<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text"
+  data-image-src="/assets/erpnu_com/images/art/bg1.jpg">
+  <div class="container inner text-center">
     <div class="space90"></div>
     <h1 class="page-title">Contact Us</h1>
   </div>
@@ -106,30 +108,38 @@
  
 </div>
 {% endblock %} 
+
 {% block body_include %}
 <script type="text/javascript">
   $("#contact-form").on("submit", function () {
     frappe.call({
       method: "octavision.www.contact.contact.create_contact_us",
       args: {
-        contact_name: $("#form_name").val(),
-        company_name: $("#form_company_name").val(),
-        phone: $("#form_phone").val(),
-        business_domain: $("#form_business_domain").val(),
-        no_of_employees: $("#form_no_of_employees").val(),
+        contact_name: $("#form_name").val(),       
+        phone: $("#form_phone").val(),      
         message: $("#form_message").val(),
         email: $("#form_email").val(),
       },
       callback: function (r) {
-        if (r.message) {
-          // Success response
-          console.log("Success:", r.message);
-        } else if (r.exc) {
-          // Error response
-          console.log("Error:", r.exc);
+        if (!r.exex) {
+          frappe.msgprint(
+            "Successfully Sent! We will contact you soon.",
+            "Successful"
+          );
+          setTimeout(function () {
+            window.location.reload();
+          }, 3000);
         }
       },
     });
+    event.preventDefault();
   });
+</script>
+{% endblock %}
+
+{% block script%}
+
+<script type="text/javascript">
+{% include "templates/contact.js" %}
 </script>
 {% endblock %}

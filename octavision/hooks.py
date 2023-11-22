@@ -13,10 +13,14 @@ app_license = "MIT"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/octavision/css/octavision.css"
 # app_include_js = "/assets/octavision/js/octavision.js"
+app_include_js = "/assets/octavision/www/js/contact.js"
+
 
 # include js, css files in header of web template
 # web_include_css = "/assets/octavision/css/octavision.css"
 # web_include_js = "/assets/octavision/js/octavision.js"
+web_include_js = "/assets/octavision/www/js/contact.js"
+web_include_js = "/assets/octavision/js/main.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "octavision/public/scss/website"
