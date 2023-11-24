@@ -1,113 +1,98 @@
 {
- "actions": [],
- "allow_rename": 1,
- "creation": "2023-11-17 14:11:01.507477",
- "default_view": "List",
- "doctype": "DocType",
- "editable_grid": 1,
- "engine": "InnoDB",
- "field_order": [
-  "contact_name",
-  "company_name",
-  "business_domain",
-  "column_break_3",
-  "email",
-  "phone",
-  "no_of_employees",
-  "section_break_6",
-  "message"
- ],
- "fields": [
-  {
-   "fieldname": "email",
-   "fieldtype": "Data",
-   "label": "Email",
-   "options": "Email"
-  },
-  {
-   "fieldname": "phone",
-   "fieldtype": "Data",
-   "label": "Phone"
-  },
-  {
-   "fieldname": "message",
-   "fieldtype": "Text",
-   "in_list_view": 1,
-   "label": "Message"
-  },
-  {
-   "fieldname": "column_break_3",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_6",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "contact_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Contact Name"
-  },
-  {
-   "fieldname": "company_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Company Name"
-  },
-  {
-   "fieldname": "business_domain",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Business Domain",
-   "options": "Manufacturing\nDistribution\nServices\nRetail\nHealthcare\nEducation\nAgriculture\nNonprofit"
-  },
-  {
-   "fieldname": "no_of_employees",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "No of Employees",
-   "options": "1-10\n11-50\n51-200\n201-500\n501-1000\n1000+"
-  }
- ],
- "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-11-23 09:47:53.970807",
- "modified_by": "Administrator",
- "module": "OctaVision",
- "name": "Website Contact",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Guest",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": []
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:email",
+  "creation": "2023-11-17 14:11:01.507477",
+  "default_view": "List",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "contact_name",
+    "email",
+    "column_break_3",
+    "query_type",
+    "phone",
+    "section_break_6",
+    "message"
+  ],
+  "fields": [
+    {
+      "fieldname": "contact_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Contact Name"
+    },
+    {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "label": "Email",
+      "options": "Email"
+    },
+    {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "query_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Business Domain",
+      "options": "ERPNext Implementation\nFrappe Custom App Development\nSalesforce Development\nZoho Development\nOdoo Development\nBusiness Insights"
+    },
+    {
+      "fieldname": "phone",
+      "fieldtype": "Data",
+      "label": "Phone"
+    },
+    {
+      "fieldname": "section_break_6",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "message",
+      "fieldtype": "Text",
+      "in_list_view": 1,
+      "label": "Message"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2023-11-23 09:47:53.970807",
+  "modified_by": "Administrator",
+  "module": "OctaVision",
+  "name": "Website Contact",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "select": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Guest",
+      "select": 1,
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
 }

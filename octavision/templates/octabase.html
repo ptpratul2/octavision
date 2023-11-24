@@ -1,13 +1,22 @@
+
+
+
 <!DOCTYPE html>
+<!-- Built on Frappe. https://frappeframework.com/ -->
 <html lang="en">
-
-
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %} -Octavision{% endblock %}</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="frappe">
+
+	{% block meta_block %}
+		{% include "templates/includes/meta_block.html" %}
+	{% endblock %}
+
+	<title>{% block title %}{{ title | striptags }}{% endblock %}</title>
+
+	
+
   {% block head %}
   <!-- Favicons -->
   <link href="/assets/octavision/img/favicon.png" rel="icon">
@@ -34,43 +43,62 @@
 
 
   {% endblock %}
-  <script>
-    window.frappe = {};
-    frappe.ready_events = [];
-    frappe.ready = function (fn) {
-      frappe.ready_events.push(fn);
-    }
-    window.dev_server = {{ dev_server }};
-    window.socketio_port = {{ (frappe.socketio_port or 'null') }};
-    window.show_language_picker = {{ show_language_picker }};
+	{%- block head_include %}
+		{{ head_include or "" }}
+	{% endblock -%}
 
-  </script>
+	{%- block style %}
+		{% if colocated_css -%}
+			<style>{{ colocated_css }}</style>
+		{%- endif %}
+	{%- endblock -%}
+
+	<script>
+		window.frappe = {};
+		frappe.ready_events = [];
+		frappe.ready = function(fn) {
+			frappe.ready_events.push(fn);
+		}
+		window.dev_server = {{ dev_server }};
+		window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+		window.show_language_picker = {{ show_language_picker or 'false' }};
+	</script>
 </head>
+<body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %} class="{{ body_class or ''}}">
+	{% block navbar %}
+  {% include "templates/includes/header.html" %}
+		{% endblock %}
 
-<body>
-  {% block navbar %}
-  {% include 'templates/includes/header.html' %}
-  {% endblock %}
+		{% block content %}
+		{{ content }}
+		{% endblock %}
 
-  {% block content %}
-  {{ content }}
-  {% endblock %}
+		{% block footer %}
+		{% include "templates/includes/footer.html" %}
+		{% endblock %}
 
-  {% block footer %}
-  {% include 'templates/includes/footer.html' %}
-  {% endblock %}
+	{% block base_scripts %}
+	<!-- js should be loaded in body! -->
+	<script>
+		frappe.boot = {{ boot }}
+		// for backward compatibility of some libs
+		frappe.sys_defaults = frappe.boot.sysdefaults;
+	</script>
+	{{ include_script('frappe-web.bundle.js') }}
+	{% endblock %}
 
-  {% block base_script %}
-  <script type="text/javascript" src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="/assets/js/frappe-web.min.js?ver={{ build_version }}"></script>
-	<script type="text/javascript" src="/assets/js/bootstrap-4-web.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
+	{%- for link in web_include_js %}
+	{{ include_script(link) }}
+	{%- endfor -%}
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <!-- Uncomment below if you want to use a preloader -->
-  <!-- <div id="preloader"></div> -->
-
-  <!-- JavaScript /assets/octavision//assets/octavision/libraries -->
+	{%- block script %}
+		{% if colocated_js -%}
+			<script>{{ colocated_js }}</script>
+		{%- endif %}
+	{%- endblock %}
+	<!-- csrf_token -->
+	{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+  
   <script src="/assets/octavision/lib/jquery/jquery.min.js"></script>
   <script src="/assets/octavision/lib/jquery/jquery-migrate.min.js"></script>
   <script src="/assets/octavision/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -82,13 +110,5 @@
   <script src="/assets/octavision/lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="/assets/octavision/lib/isotope/isotope.pkgd.min.js"></script>
   <script src="/assets/octavision/lib/lightbox/js/lightbox.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <!-- <script src="contactform/contactform.js"></script> -->
-{% endblock %}
-  <!-- Template Main Javascript File -->
-<!-- csrf_token -->
-  <!-- <script>frappe.csrf_token = "{{frappe.session.csrf_token}}";</script> -->
-
 </body>
 </html>
-
