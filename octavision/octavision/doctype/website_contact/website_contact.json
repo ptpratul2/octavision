@@ -22,8 +22,7 @@
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email",
-   "options": "Email",
-   "reqd": 1
+   "options": "Email"
   },
   {
    "fieldname": "phone",
@@ -34,8 +33,7 @@
    "fieldname": "message",
    "fieldtype": "Text",
    "in_list_view": 1,
-   "label": "Message",
-   "reqd": 1
+   "label": "Message"
   },
   {
    "fieldname": "column_break_3",
@@ -49,15 +47,13 @@
    "fieldname": "contact_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Contact Name",
-   "reqd": 1
+   "label": "Contact Name"
   },
   {
    "fieldname": "company_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Company Name",
-   "reqd": 1
+   "label": "Company Name"
   },
   {
    "fieldname": "business_domain",
@@ -65,8 +61,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Business Domain",
-   "options": "Manufacturing\nDistribution\nServices\nRetail\nHealthcare\nEducation\nAgriculture\nNonprofit",
-   "reqd": 1
+   "options": "Manufacturing\nDistribution\nServices\nRetail\nHealthcare\nEducation\nAgriculture\nNonprofit"
   },
   {
    "fieldname": "no_of_employees",
@@ -74,13 +69,12 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "No of Employees",
-   "options": "1-10\n11-50\n51-200\n201-500\n501-1000\n1000+",
-   "reqd": 1
+   "options": "1-10\n11-50\n51-200\n201-500\n501-1000\n1000+"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-17 14:38:59.463620",
+ "modified": "2023-11-23 09:47:53.970807",
  "modified_by": "Administrator",
  "module": "OctaVision",
  "name": "Website Contact",

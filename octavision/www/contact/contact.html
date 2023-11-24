@@ -25,40 +25,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input id="form_company_name" type="text" name="name" class="form-control" placeholder="Company Name" />
-                  <div class="help-block with-errors"></div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
                   <input id="form_name" type="text" name="surname" class="form-control" placeholder="Your Name" />
                   <div class="help-block with-errors"></div>
                 </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <select id="form_business_domain" name="business_domain" class="form-control" placeholder="Your Name">
-                    <option value="">Select Business Domain</option>
-                    <option value="Manufacturing">Manufacturing</option>
-                    <option value="Distribution">Distribution</option>
-                    <!-- Add other options here -->
-                  </select>
-                  <div class="help-block with-errors"></div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <select id="form_no_of_employees" name="no_of_employees" class="form-control" placeholder="Your Name">
-                    <option value="">Select No. of Employees</option>
-                    <option value="1-10">1-10</option>
-                    <!-- Add other options here -->
-                  </select>
-                  <div class="help-block with-errors"></div>
-                </div>
-              </div>
-            </div>
+            </div>           
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -112,11 +83,8 @@
     frappe.call({
       method: "octavision.www.contact.contact.create_contact_us",
       args: {
-        contact_name: $("#form_name").val(),
-        company_name: $("#form_company_name").val(),
+        contact_name: $("#form_name").val(),       
         phone: $("#form_phone").val(),
-        business_domain: $("#form_business_domain").val(),
-        no_of_employees: $("#form_no_of_employees").val(),
         message: $("#form_message").val(),
         email: $("#form_email").val(),
       },
