@@ -470,7 +470,9 @@ h6 {
 
 /* Sections Header
 --------------------------------*/
-
+.section-header{
+ padding-top: 50px;
+}
 .section-header h3 {
   font-size: 36px;
   color: #413e66;

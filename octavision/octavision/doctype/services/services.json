@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2023-11-10 10:26:24.457781",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "sub_title",
+  "image",
+  "content",
+  "introduction",
+  "section_break_1",
+  "service_item_title",
+  "services_item",
+  "core_feature",
+  "font_awesome",
+  "i_class_background",
+  "background"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "unique": 1
+  },
+  {
+   "fieldname": "sub_title",
+   "fieldtype": "Data",
+   "label": "Sub Title"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Content"
+  },
+  {
+   "fieldname": "introduction",
+   "fieldtype": "Text Editor",
+   "label": "Introduction"
+  },
+  {
+   "fieldname": "core_feature",
+   "fieldtype": "Text Editor",
+   "label": "Core Feature"
+  },
+  {
+   "fieldname": "font_awesome",
+   "fieldtype": "Data",
+   "label": "Font Awesome"
+  },
+  {
+   "fieldname": "i_class_background",
+   "fieldtype": "Data",
+   "label": "I Class Background"
+  },
+  {
+   "fieldname": "background",
+   "fieldtype": "Data",
+   "label": "Background"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_item_title",
+   "fieldtype": "Data",
+   "label": "Service Item Title"
+  },
+  {
+   "fieldname": "services_item",
+   "fieldtype": "Table",
+   "label": "Services Item",
+   "options": "Services Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-25 17:30:21.114087",
+ "modified_by": "Administrator",
+ "module": "OctaVision",
+ "name": "Services",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

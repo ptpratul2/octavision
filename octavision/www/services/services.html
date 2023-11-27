@@ -1,33 +1,122 @@
 {% extends 'templates/octabase.html' %}
 {% block title %}Service{% endblock %}
 {% block content%}
- <!--==========================
+<style>
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    padding-bottom: 25px;
+  
+    /* border: 1px solid #ccc; */
+    /* background-color: #f1f1f1; */
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    /* border: 1px solid #ccc; */
+    border-top: none;
+  }
+</style>
+
+<!--==========================
         Services Section
       ============================-->
-    <section id="services" class="section-bg">
-        <div class="container">
+<section id="services" class="section-bg" style="background-image: url('/assets/octavision/img/intro-bg.jpg');">
+  <div class="container">
+    <header class="section-header">
+      <h3>Services</h3>
+      <p>We offer a comprehensive range of services tailored to meet your specific ERP and business software needs. Our
+        expertise extends to a wide array of solutions, ensuring that we can address the unique challenges and
+        opportunities your business encounters..</p>
+    </header>
+    <div class="row">
 
-          <header class="section-header">
-            <h3>Services</h3>
-            <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
-          </header>
-          
-          <div class="row">
-            <div class="col-md-6 col-lg-6 wow bounceInUp" data-wow-duration="1.4s">
-                <img src="{{services.image}}" alt="" class="img-fluid" style="height:auto">
-            </div>
-                <div class="col-md-6 col-lg-6 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon" style="background: {{services.background}}"><i class="{{services.font_awesome}}" style="color:{{services.i_class_background}}"></i></div>
-                        <h4 class="title"><a href="">{{services.title}}</a></h4>
-                        <p class="description">{{services.sub_title}}</p>
-                        <p class="description">{{services.content}}</p>
-                    </div>
-                </div>
-            
-            </div>
-            
+
+      <div class="col-md-6 col-lg-6 wow bounceInUp" data-wow-duration="1.4s">
+        <img src="{{services.image}}" alt="" class="img-fluid" style="height:auto">
+      </div>
+      <div class="col-md-6 col-lg-6 wow bounceInUp" data-wow-duration="1.4s">
+        <div class="box">
+          <div class="icon" style="background: {{services.background}}"><i class="{{services.font_awesome}}"
+              style="color:{{services.i_class_background}}"></i></div>
+          <h4 class="title"><a href="">{{services.title}}</a></h4>
+          <p class="description">{{services.sub_title}}</p>
+          <p class="description">{{services.content}}</p>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 wow bounceInUp" data-wow-duration="1.4s">
+        <p class="description">{{services.introduction}}</p>
+      </div>
+    </div>
+
+    <div class="tab">
+      {% for services_item in services_item %}
+        <button class="tablinks" onclick="clickHandle(event, '{{services_item.title}} ')">{{services_item.title}}</button>
+      {% endfor %}
+    </div>
+    
+    {% for services_item in services_item %}
+      <div id="{{services_item.title}} " class="tabcontent">
+        <p>{{services_item.subtitle}} .</p>
+      </div>
+    {% endfor %}
+    
+
+    <div class="row">
+      <div class="col-md-12 wow bounceInUp" data-wow-duration="1.4s">
+        <p class="description">{{services.core_feature}}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 <!-- #services -->
-      {% endblock %}
+<script>
+  function clickHandle(evt, animalName) {
+    let i, tabcontent, tablinks;
+
+    // This is to clear the previous clicked content.
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Set the tab to be "active".
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Display the clicked tab and set it to active.
+    document.getElementById(animalName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+{% endblock %}
